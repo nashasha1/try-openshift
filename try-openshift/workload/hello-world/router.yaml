@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: gitops-router
+  namespace: xdzhang-project
+spec:
+  host: gitops-router-xdzhang-project.apps.invest-414.huaweipay.win
+  to:
+    kind: Service
+    name: gitops
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
