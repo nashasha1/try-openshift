@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: app-set-router
+  namespace: xdzhang-project
+spec:
+  host: app-set-router-xdzhang-project.apps.invest-414.huaweipay.win
+  to:
+    kind: Service
+    name: app-set
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
